@@ -8,11 +8,13 @@ Custom NLog target for streaming events to AWS Kinesis Stream in batches
 2. Add an NLog.config to your project
 3. Configure copy to output for the NLog.config
 
-  <ItemGroup>
+```
+<ItemGroup>
     <None Include="NLog.config" CopyToOutputDirectory="Always">
     </None>
-  </ItemGroup>
-  
+</ItemGroup>
+```
+
 # Sample NLog.config
 
 ```xml
