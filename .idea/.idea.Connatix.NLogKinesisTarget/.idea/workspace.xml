@@ -22,13 +22,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0dc545c-7b4a-4ed3-a677-24c367472cc8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Connatix.NLogKinesisTarget/.idea/contentModel.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Connatix.NLogKinesisTarget/.idea/indexLayout.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Connatix.NLogKinesisTarget/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Connatix.NLogKinesisTarget/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.Connatix.NLogKinesisTarget/riderModule.iml" />
-    </list>
+    <list default="true" id="c0dc545c-7b4a-4ed3-a677-24c367472cc8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,12 +204,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1518527118931</updated>
-      <workItem from="1518527120303" duration="153000" />
+      <workItem from="1518527120303" duration="747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153000" />
+    <option name="totallyTimeSpent" value="747000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
