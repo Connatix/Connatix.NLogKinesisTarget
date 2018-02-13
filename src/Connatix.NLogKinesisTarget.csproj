@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+   <TargetFrameworks>netstandard2.0;</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Core" Version="3.3.21" />
+    <PackageReference Include="AWSSDK.Kinesis" Version="3.3.5" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.5.0-rc2" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,52 @@
+﻿using Amazon;
+using Amazon.Kinesis;
+using Amazon.Kinesis.Model;
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace Connatix.NLogKinesisTarget
+{
+    public class ConnatixKinesisUpload
+    {
+        private readonly AmazonKinesisClient m_client;
+
+        public ConnatixKinesisUpload(string awsKey, string awsSecret, string region)
+        {
+            m_client = new AmazonKinesisClient(awsKey, awsSecret, RegionEndpoint.GetBySystemName(region));
+        }
+
+        public PutRecordsResponse Write(List<string> logMessages, string streamName)
+        {
+            var request = new PutRecordsRequest
+            {
+                StreamName = streamName
+            };
+
+            foreach (string message in logMessages)
+            {
+                using (var ms = GenerateStreamFromString(message))
+                {
+                    request.Records.Add(new PutRecordsRequestEntry
+                    {
+                        Data = ms,
+                        PartitionKey = Guid.NewGuid().ToString()
+                    });
+                }
+            }
+
+            return m_client.PutRecordsAsync(request).Result;
+        }
+
+        private static MemoryStream GenerateStreamFromString(string s)
+        {
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(s);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
+        }
+    }
+}
+
