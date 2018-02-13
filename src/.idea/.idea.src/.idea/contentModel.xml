@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2017.3/resharper-host/local/Transient/ReSharperHost/v11/SolutionCaches/_src.2142734747.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Connatix.NLogKinesisTarget.csproj" t="IncludeRecursive" />
+      <e p="KinesisTarget.cs" t="Include" />
+      <e p="KinesisUpload.cs" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netstandard2.0" t="Include">
+            <e p="Connatix.NLogKinesisTarget.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="src.sln" t="IncludeFlat" />
+    </e>
+    <e p="/var/folders/xy/0ky1z3cn2tx3jtpxj9np4gph0000gn/T" t="Include">
+      <e p=".NETStandard,Version=v2.0.AssemblyAttributes.cs" t="Include" />
+    </e>
+  </component>
+</project>
