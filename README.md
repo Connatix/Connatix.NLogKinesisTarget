@@ -1,6 +1,6 @@
 # Connatix.NLogKinesisTarget
 
-Library for streaming NLog events to AWS Kinesis Stream
+Custom NLog target for streaming NLog events to AWS Kinesis Stream in batches
 
 # Usage
 
