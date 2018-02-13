@@ -1,0 +1,1 @@
+# Connatix.NLogKinesisTarget
