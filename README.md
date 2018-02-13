@@ -52,11 +52,11 @@ Library for streaming NLog events to AWS Kinesis Stream
 
 # Configurable Fields
 
-**AWS_KEY:** AWS key with write permissions on the Kinesis Stream
-**AWS_SECRET:** Secret for the provided AWS_KEY
-**AWS_REGION:** AWS Region (https://docs.aws.amazon.com/general/latest/gr/rande.html) *e.g. us-east-1*
-**STREAM_NAME:** AWS Kinesis stream name to write events to
+**AWS_KEY:** AWS key with write permissions on the Kinesis Stream. 
+**AWS_SECRET:** Secret for the provided AWS_KEY. 
+**AWS_REGION:** AWS Region (https://docs.aws.amazon.com/general/latest/gr/rande.html) *e.g. us-east-1*. 
+**STREAM_NAME:** AWS Kinesis stream name to write events to. 
 
-**BATCH_SIZE:** Maximum number of events to be sent in 1 batch to AWS Kinesis Stream
-**MAX_SIZE:** The maximum queue size of events. In case the limit is reached, new events are not being queued for sending to AWS Kinesis Stream
-**BATCH_INTERVAL:** Interval in milliseconds between sending events to AWS Kinesis
+**BATCH_SIZE:** Maximum number of events to be sent in 1 batch to AWS Kinesis Stream. 
+**MAX_SIZE:** The maximum queue size of events. In case the limit is reached, new events are not being queued for sending to AWS Kinesis Stream. 
+**BATCH_INTERVAL:** Interval in milliseconds between sending events to AWS Kinesis. 
