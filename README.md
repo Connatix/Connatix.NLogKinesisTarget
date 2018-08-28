@@ -67,3 +67,5 @@ Custom NLog target for streaming events to AWS Kinesis Stream in batches
 **MAX_SIZE:** The maximum queue size of events. In case the limit is reached, new events are not being queued for sending to AWS Kinesis Stream. 
 
 **BATCH_INTERVAL:** Interval in milliseconds between sending events to AWS Kinesis. 
+
+**IAM:** If *AWS_KEY* or *AWS_SECRET* is not passed then the authentication to AWS will be performed using instance IAM

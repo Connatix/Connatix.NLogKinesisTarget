@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Connatix.NLogKinesisTarget</id>
+    <version>1.0.2</version>
+    <description>NLog target to stream events to an AWS Kinesis Stream</description>
+    <authors>Connatix</authors>
+    <projectUrl>https://github.com/Connatix/Connatix.NLogKinesisTarget</projectUrl>
+    <iconUrl>http://i.connatix.com/logos/logo-black.png</iconUrl>
+    <owners>Connatix</owners>
+    <copyright>Copyright 2018 (c) Connatix. All rights reserved.</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+     <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AWSSDK.Core" version="3.*" exclude="Build,Analyzers" />        
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AWSSDK.Kinesis" version="3.*" exclude="Build,Analyzers" />        
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NLog" version="4.*" exclude="Build,Analyzers" />        
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+  </files>
+</package>

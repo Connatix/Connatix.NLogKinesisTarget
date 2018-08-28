@@ -13,7 +13,11 @@ namespace Connatix.NLogKinesisTarget
 
         public ConnatixKinesisUpload(string awsKey, string awsSecret, string region)
         {
-            m_client = new AmazonKinesisClient(awsKey, awsSecret, RegionEndpoint.GetBySystemName(region));
+            if (string.IsNullOrEmpty(awsKey) || string.IsNullOrEmpty(awsSecret)){
+                m_client = new AmazonKinesisClient(RegionEndpoint.GetBySystemName(region));
+            }else{
+                m_client = new AmazonKinesisClient(awsKey, awsSecret, RegionEndpoint.GetBySystemName(region));
+            }
         }
 
         public PutRecordsResponse Write(List<string> logMessages, string streamName)
