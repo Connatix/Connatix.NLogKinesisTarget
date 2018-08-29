@@ -26,10 +26,8 @@ namespace Connatix.NLogKinesisTarget
             m_timer.Start();
         }
 
-        [RequiredParameter]
         public string AwsKey { get; set; }
 
-        [RequiredParameter]
         public string AwsSecret { get; set; }
 
         [RequiredParameter]
