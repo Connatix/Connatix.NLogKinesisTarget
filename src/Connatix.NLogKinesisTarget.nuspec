@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Connatix.NLogKinesisTarget</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <description>NLog target to stream events to an AWS Kinesis Stream</description>
     <authors>Connatix</authors>
     <projectUrl>https://github.com/Connatix/Connatix.NLogKinesisTarget</projectUrl>
