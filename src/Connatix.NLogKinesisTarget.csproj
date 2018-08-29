@@ -1,10 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+  <Version>1.0.5</Version>
    <TargetFrameworks>netstandard2.0;</TargetFrameworks>
+   <NuspecFile>Connatix.NLogKinesisTarget.nuspec</NuspecFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AWSSDK.Core" Version="3.3.25" />
     <PackageReference Include="AWSSDK.Kinesis" Version="3.3.6" />
     <PackageReference Include="NLog" Version="4.5.9" />
   </ItemGroup>
+  <Target Name="SetNuspecProperties" BeforeTargets="GenerateNuspec">
+    <PropertyGroup>
+      <NuspecProperties>$(NuspecProperties);id=$(AssemblyName)</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);config=$(Configuration)</NuspecProperties>
+      <NuspecProperties>$(NuspecProperties);version=$(PackageVersion)</NuspecProperties>
+    </PropertyGroup>
+    <Message Importance="high" Text="NuspecProperties: $(NuspecProperties)" />
+  </Target>
 </Project>
