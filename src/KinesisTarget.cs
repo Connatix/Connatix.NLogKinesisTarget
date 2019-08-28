@@ -7,12 +7,16 @@ using Amazon.Kinesis.Model;
 using System.Timers;
 using System.Collections.Concurrent;
 using NLog.Common;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Connatix.NLogKinesisTarget
 {
     [Target("ConnatixKinesisTarget")]
-    public sealed class ConnatixKinesisTarget : TargetWithLayout
+    public sealed class ConnatixKinesisTarget : AsyncTaskTarget
     {
+        private object m_lock = new object();
+
         private ConnatixKinesisUpload m_upload;
 
         public string AwsKey { get; set; }
@@ -25,31 +29,33 @@ namespace Connatix.NLogKinesisTarget
         [RequiredParameter]
         public string Stream { get; set; }
 
-        protected override void Write(LogEventInfo logEvent)
-        {
-            base.Write(logEvent);
-        }
-
-        protected override void Write(IList<AsyncLogEventInfo> logEvents)
-        {
+        protected override async Task WriteAsyncTask(IList<LogEventInfo> logEvents, CancellationToken token){
             try
             {
                 if (m_upload == null)
                 {
-                    m_upload = new ConnatixKinesisUpload(AwsKey, AwsSecret, AwsRegion);
+                    lock (m_lock){
+                        if (m_upload == null){
+                            m_upload = new ConnatixKinesisUpload(AwsKey, AwsSecret, AwsRegion);
+                        }
+                    }
                 }
 
                 List<string> messages = new List<string>();
-                foreach (var log in logEvents)
-                {
-                    messages.Add(Layout.Render(log.LogEvent));
+                foreach (var logEvent in logEvents){
+                    messages.Add(Layout.Render(logEvent));
                 }
 
-                m_upload.Write(messages, Stream);
+                await m_upload.WriteAsync(messages, Stream);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
+        }
+
+        protected override async Task WriteAsyncTask(LogEventInfo logEvent, CancellationToken token)
+        { 
+            await WriteAsyncTask(new List<LogEventInfo>(){logEvent}, token);
         }
     }
 }

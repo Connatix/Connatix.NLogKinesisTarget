@@ -4,6 +4,7 @@ using Amazon.Kinesis.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Connatix.NLogKinesisTarget
 {
@@ -20,7 +21,7 @@ namespace Connatix.NLogKinesisTarget
             }
         }
 
-        public PutRecordsResponse Write(List<string> logMessages, string streamName)
+        public async Task<PutRecordsResponse> WriteAsync(List<string> logMessages, string streamName)
         {
             var request = new PutRecordsRequest
             {
@@ -39,7 +40,7 @@ namespace Connatix.NLogKinesisTarget
                 }
             }
 
-            return m_client.PutRecordsAsync(request).Result;
+            return await m_client.PutRecordsAsync(request);
         }
 
         private static MemoryStream GenerateStreamFromString(string s)
